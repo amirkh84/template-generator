@@ -1,14 +1,16 @@
+/* seting root color variables */
 :root {
     --body-background: #f8f8f8;
     --container: #8b6bff;
     --color-box: #fcfcfc;
     --color1: #300066;
     --hover: #300066;
-    --ht: #300066;
+    --ht: #eca200;
     --color2: #4709ac;
     --color3: #eca200;
     --text: #1e0030;
 }
+/* first and overall styles */
 * {
     margin: 0;
     padding: 0;
@@ -26,13 +28,14 @@ body {
     align-items: center;
     background-color: var(--body-background);
 }
+/* main sections style */
 .container {
     width: 100%;
-    height: 900px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 60px;
 }
 .used-colors {
@@ -55,7 +58,12 @@ body {
     border-radius: 25px;
     box-shadow: -2px 2px 20px -5px #00000044;
     overflow: hidden;
+    transition: 100ms;
 }
+.color-box:hover {
+    box-shadow: -2px 2px 23px -5px #0000005b;
+}
+/* color platte styles */
 .color {
     width: 100%;
     height: 75%;
@@ -66,9 +74,12 @@ body {
     font-size: 20px;
     margin-bottom: 5px;
 }
+/* the section of cards and overall template styles */
 .template {
+    margin-top: 20px;
+    margin-bottom: 20px;
     width: 100%;
-    height: 600px;
+    height: 500px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -93,6 +104,7 @@ body {
     bottom: 0;
     transition: 200ms;
 }
+/* card styles */
 .card {
     width: 300px;
     height: 370px;
@@ -103,10 +115,11 @@ body {
     align-items: center;
     border-radius: 20px;
     z-index: 9;
-    box-shadow: 1px 5px 15px -8px rgba(0, 0, 0, 0.596);
+    box-shadow: 1px 5px 15px -8px rgba(0, 0, 0, 0.466);
     transition: 200ms;
 }
 .card:hover {
+    box-shadow: 1px 5px 20px -8px rgba(0, 0, 0, 0.527);
     transform: scale(1.02);
 }
 .title {
@@ -140,6 +153,7 @@ body {
 .more:active {
     transform: scale(0.95);
 }
+/* generate button */
 .generate {
     width: 150px;
     height: 40px;
@@ -150,6 +164,7 @@ body {
     color: white;
     box-shadow: -2px 2px 20px -5px #00000044;
     transition: 200ms;
+    margin-bottom: 10px;
 }
 .generate:hover {
     transform: scale(1.05);
@@ -157,6 +172,7 @@ body {
 .generate:active {
     background-color: #000fdf;
 }
+/* responsive rules */
 @media  screen and (max-width:1300px) {
     .card:nth-child(3) {
         display: none;
@@ -183,3 +199,4 @@ body {
         width: 250px;
     }
 }
+/* finished */

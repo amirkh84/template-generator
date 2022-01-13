@@ -25,17 +25,16 @@ function change() {
     colorC = gen();
     Btop.style.backgroundColor = colorA;
     Bbottom.style.backgroundColor = colorB;
-    for (let index = 0; index < card.length; index++) {
-        card[index].style.backgroundColor = colorC;
-        more[index].style.borderColor = colorA;
-        more[index].style.color = colorA;
+    for (let n = 0; n < card.length; n++) {
+        card[n].style.backgroundColor = colorC;
+        more[n].style.borderColor = colorA;
+        more[n].style.color = colorA;
     };
-    colorHolder[0].style.backgroundColor = colorA;
-    colorHolder[1].style.backgroundColor = colorB;
-    colorHolder[2].style.backgroundColor = colorC;
-    hex[0].innerText = colorA;
-    hex[1].innerText = colorB;
-    hex[2].innerText = colorC;
+    let Carr = [colorA , colorB , colorC];
+    for (let m = 0; m < colorHolder.length; m++) {
+        colorHolder[m].style.backgroundColor = Carr[m];
+        hex[m].innerText = Carr[m];
+    };
     root.style.setProperty("--hover",colorA);
     root.style.setProperty("--ht",colorC);
     root.style.setProperty("--text",colorA);
