@@ -4,53 +4,73 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Template Generator</title>
+        <title>Glassmorphism Palette Generator</title>
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
-        <!-- i put pre-needed htmls here and didnt use js for generating
-             cards and parts for using less js and optimize the site -->
-        <section class="container">
+        <main class="container">
             <div class="used-colors">
                 <div class="color-box">
                     <div class="color"></div>
-                    <p class="hex">#300066</p>
+                    <p class="hex" data-color-var="--color-1">#300066</p>
                 </div>
                 <div class="color-box">
-                    <div class="color" style="background-color: #4709ac;"></div>
-                    <p class="hex">#4709ac</p>
+                    <div class="color"></div>
+                    <p class="hex" data-color-var="--color-2">#4709ac</p>
                 </div>
                 <div class="color-box">
-                    <div class="color" style="background-color: #eca200;"></div>
-                    <p class="hex">#eca200</p>
+                    <div class="color"></div>
+                    <p class="hex" data-color-var="--color-3">#eca200</p>
                 </div>
             </div>
+
             <div class="template">
                 <div class="background-top"></div>
                 <div class="background-bottom"></div>
                 <div class="card">
-                    <h2 class="title">Test Title</h2>
-                    <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem</p>
-                    <button class="more">More</button>
+                    <h2 class="title">Awesome Title</h2>
+                    <p class="info">This is a sample card showcasing the beautiful glassmorphism effect and the generated color palette.</p>
+                    <button class="more">Learn More</button>
                 </div>
                 <div class="card">
-                    <h2 class="title">Test Title</h2>
-                    <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem</p>
-                    <button class="more">More</button>
+                    <h2 class="title">Another Title</h2>
+                    <p class="info">The background gradient and card colors are all customizable using the controls below.</p>
+                    <button class="more">Discover</button>
                 </div>
                 <div class="card">
-                    <h2 class="title">Test Title</h2>
-                    <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem</p>
-                    <button class="more">More</button>
+                    <h2 class="title">Third Title</h2>
+                    <p class="info">Click on the hex codes to copy them to your clipboard. Try it out!</p>
+                    <button class="more">Explore</button>
                 </div>
-                <div class="card">
-                    <h2 class="title">Test Title</h2>
-                    <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae exercitationem</p>
-                    <button class="more">More</button>
+                 <div class="card">
+                    <h2 class="title">Fourth Title</h2>
+                    <p class="info">Use the color pickers to fine-tune your palette or generate a new one with the button.</p>
+                    <button class="more">Get Started</button>
                 </div>
             </div>
-            <button class="generate">Generate</button>
-        </section>
+
+            <div class="controls">
+                <div class="options">
+                    <div class="color-picker-group">
+                        <label for="color-picker-1" class="color-picker-label">Color 1</label>
+                        <input type="color" id="color-picker-1" class="color-picker" value="#300066">
+                    </div>
+                    <div class="color-picker-group">
+                        <label for="color-picker-2" class="color-picker-label">Color 2</label>
+                        <input type="color" id="color-picker-2" class="color-picker" value="#4709ac">
+                    </div>
+                    <div class="color-picker-group">
+                        <label for="color-picker-3" class="color-picker-label">Color 3</label>
+                        <input type="color" id="color-picker-3" class="color-picker" value="#eca200">
+                    </div>
+                </div>
+                <button class="generate">Generate</button>
+                <div class="gradient-switch">
+                    <label for="gradient-toggle">Use Gradient BG</label>
+                    <input type="checkbox" id="gradient-toggle" checked>
+                </div>
+            </div>
+        </main>
         <script src="assets/js/app.js"></script>
     </body>
 </html>
