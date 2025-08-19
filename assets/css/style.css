@@ -1,204 +1,290 @@
-/* seting root color variables */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
 :root {
-    --body-background: #f8f8f8;
-    --container: #8b6bff;
-    --color-box: #fcfcfc;
-    --color1: #300066;
-    --hover: #300066;
-    --ht: #eca200;
-    --color2: #4709ac;
-    --color3: #eca200;
-    --text: #1e0030;
+    --color-1: #300066;
+    --color-2: #4709ac;
+    --color-3: #eca200;
+    --text-color: #ffffff;
+    --card-bg-color: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(255, 255, 255, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
-/* first and overall styles */
+
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-html {
-    height: 100%;
-}
+
 body {
-    height: 100%;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--body-background);
+    min-height: 100vh;
+    background: linear-gradient(45deg, #FF5F6D, #FFC371, #2774AE, #43C6AC);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
 }
-/* main sections style */
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .container {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    max-width: 1200px;
+    background: var(--card-bg-color);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px 0 var(--shadow-color);
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border-radius: 60px;
+    gap: 30px;
 }
+
 .used-colors {
-    width: 100%;
-    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    gap: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
+
 .color-box {
-    width: 180px;
-    height: 150px;
+    width: 150px;
+    height: 180px;
+    background: var(--card-bg-color);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-box);
-    border-radius: 25px;
-    box-shadow: -2px 2px 20px -5px #00000044;
-    overflow: hidden;
-    transition: 100ms;
+    padding-bottom: 10px;
+    transition: transform 0.3s ease;
 }
+
 .color-box:hover {
-    box-shadow: -2px 2px 23px -5px #0000005b;
+    transform: translateY(-5px);
 }
-/* color platte styles */
+
 .color {
     width: 100%;
-    height: 75%;
-    background-color: var(--color1);
-    box-shadow: inset 0px -10px 15px -12px rgba(0, 0, 0, 0.205);
+    height: 70%;
+    background-color: var(--color-1);
+    border-radius: 15px 15px 0 0;
+    border-bottom: 1px solid var(--border-color);
 }
+
 .hex {
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
-/* the section of cards and overall template styles */
+
+.hex:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .template {
-    margin-top: 20px;
-    margin-bottom: 20px;
     width: 100%;
     height: 500px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    overflow: hidden;
-    background-color: var(--template);
-    position: relative;
-    box-shadow: -2px 1px 20px -5px #00000044;
+    background: transparent;
+    border: 1px solid var(--border-color);
 }
+
 .background-top {
-    width: 100%;
-    height: 50%;
     position: absolute;
-    background-color: var(--color1);
     top: 0;
-    transition: 200ms;
-}
-.background-bottom {
+    left: 0;
     width: 100%;
     height: 50%;
-    position: absolute;
-    background-color: var(--color2);
-    bottom: 0;
-    transition: 200ms;
+    background-color: var(--color-1);
+    transition: background-color 0.5s ease;
 }
-/* card styles */
+
+.background-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: var(--color-2);
+    transition: background-color 0.5s ease;
+}
+
 .card {
-    width: 300px;
-    height: 80%;
-    max-height: 80%;
-    min-height: 250px;
-    background-color: var(--color3);
+    width: 250px;
+    height: 85%;
+    background: var(--card-bg-color);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(5px);
+    z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border-radius: 20px;
-    z-index: 9;
-    box-shadow: 1px 5px 15px -8px rgba(0, 0, 0, 0.466);
-    transition: 200ms;
-}
-.card:hover {
-    box-shadow: 1px 5px 20px -8px rgba(0, 0, 0, 0.527);
-    transform: scale(1.02);
-}
-.title {
-    font-weight: 100;
-    font-size: 35px;
-    letter-spacing: 1px;
-    color: var(--text);
-}
-.info {
+    padding: 20px;
+    color: var(--text-color);
     text-align: center;
-    line-height: 25px;
-    margin: 10px;
-    color: var(--text);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.more {
-    width: 100px;
-    height: 50px;
-    padding: 5px;
-    font-size: 18px;
-    border: 3px solid var(--color1);
-    color: var(--color1);
-    background-color: transparent;
-    border-radius: 10px;
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 28px;
     font-weight: 600;
-    transition: 200ms;
 }
+
+.info {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.more {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 2px solid var(--text-color-dynamic, var(--text-color));
+    background-color: transparent;
+    color: var(--text-color-dynamic, var(--text-color));
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .more:hover {
-    background-color: var(--hover);
-    color: var(--ht) !important;
+    background-color: var(--more-btn-hover-bg, var(--text-color));
+    color: var(--more-btn-hover-color, var(--color-1));
 }
-.more:active {
-    transform: scale(0.95);
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
-/* generate button */
+
 .generate {
-    width: 150px;
-    height: 40px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
     border: none;
-    font-size: 20px;
-    border-radius: 5px;
-    background-color: #0059ff;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
     color: white;
-    box-shadow: -2px 2px 20px -5px #00000044;
-    transition: 200ms;
-    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .generate:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-.generate:active {
-    background-color: #000fdf;
+
+.options {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
-/* responsive rules */
-@media  screen and (max-width:1300px) {
-    .card:nth-child(3) {
+
+.color-picker-label {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.color-picker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.color-picker::-webkit-color-swatch {
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+}
+.color-picker::-moz-color-swatch {
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+}
+
+.gradient-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1100px) {
+    .card:last-child {
         display: none;
     }
 }
-@media  screen and (max-width:970px) {
+
+@media screen and (max-width: 850px) {
     .card:nth-child(4) {
         display: none;
     }
+    .template {
+        height: 450px;
+    }
 }
-@media  screen and (max-width:650px) {
-    .card:nth-child(5) {
+
+@media screen and (max-width: 650px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    .card:nth-child(3) {
         display: none;
     }
-}
-@media  screen and (max-width:370px) {
-    .hex {
-        font-size: 17px;
+    .controls {
+        flex-direction: column;
     }
+}
+
+@media screen and (max-width: 450px) {
     .used-colors {
         gap: 10px;
     }
+    .color-box {
+        width: 120px;
+        height: 150px;
+    }
     .card {
-        width: 250px;
+        display: none; /* On very small screens, maybe just show one card or none */
+    }
+    .card:first-child {
+        display: flex;
+        width: 90%;
+    }
+    .template {
+        height: 400px;
     }
 }
-/* finished */
